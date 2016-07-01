@@ -16,7 +16,7 @@ public class OperationUtilsTest {
 
     @Test
     public void test1() {
-        String wsdlUrl = "http://172.16.250.233:8080/QFTWS/services?wsdl";
+        String wsdlUrl = "http://www.webxml.com.cn/WebServices/WeatherWebService.asmx?wsdl";
         //        String wsdlUrl = "http://172.16.250.233:8080/QFTWS/services?wsdl";
         List<String> operations = getOperationByUrl(wsdlUrl);
         for (String operation : operations) {

@@ -23,8 +23,8 @@ public class SoapRequestTest {
         FilesUtils.writeToLocal(pathName,pathName+".xml", soapRequestMessage);
         System.out.println("xml file finished.your soap xml file ["+pathName+".xml]");
         System.out.println("generating json file....");
-        String jsonStr = SoapUtils.parseToJson(soapRequestMessage,false);
-        FilesUtils.writeToLocal(pathName,pathName, jsonStr);
+//        String jsonStr = SoapUtils.parseToJson(soapRequestMessage,false);
+        FilesUtils.writeToLocal(pathName,pathName, "");
         System.out.println("json file finished.your json file ["+pathName+"]");
 
     }
