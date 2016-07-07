@@ -8,8 +8,6 @@ import org.apache.commons.lang.StringUtils;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 /**
  * Created by FujiRen on 2016/5/5.
