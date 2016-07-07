@@ -1,4 +1,4 @@
-package org.wuxinshui.boosters.wsdl.json;
+package org.wuxinshui.boosters.json;
 
 import com.alibaba.fastjson.JSONObject;
 import com.google.gson.Gson;

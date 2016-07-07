@@ -1,4 +1,4 @@
-package org.wuxinshui.boosters.wsdl.file;
+package org.wuxinshui.boosters.file;
 
 import java.io.*;
 import java.util.HashSet;

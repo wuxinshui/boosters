@@ -1,9 +1,7 @@
-package org.wuxinshui.boosters.wsdl.test.file;
+package org.wuxinshui.boosters.test.file;
 
-import org.wuxinshui.boosters.wsdl.file.FilesUtils;
+import org.wuxinshui.boosters.file.FilesUtils;
 import org.junit.Test;
-
-import static org.wuxinshui.boosters.wsdl.file.FilesUtils.readFile;
 
 /**
  * Created by FujiRen on 2016/4/13.
@@ -20,6 +18,6 @@ public class FilesUtilsTest {
     @Test
     public void testReadFile() {
         String path ="";
-        System.out.println(readFile(path));
+        System.out.println(FilesUtils.readFile(path));
     }
 }

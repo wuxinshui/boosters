@@ -1,12 +1,10 @@
-package org.wuxinshui.boosters.wsdl.test.json;
+package org.wuxinshui.boosters.test.json;
 
-import org.wuxinshui.boosters.wsdl.json.JSONUtils;
+import org.wuxinshui.boosters.json.JSONUtils;
 import org.junit.Test;
 
 import java.text.DateFormat;
 import java.util.Calendar;
-
-import static org.wuxinshui.boosters.wsdl.json.JSONUtils.getJSONXpath;
 
 /**
  * Created by FujiRen on 2016/5/5.
@@ -33,7 +31,7 @@ public class JSONUtilsTest {
     public void testGetJSONXpath() {
         String s="";
 
-        System.out.println(getJSONXpath(s));
+        System.out.println(JSONUtils.getJSONXpath(s));
     }
 
 
