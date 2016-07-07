@@ -1,9 +1,8 @@
-package org.wuxinshui.boosters.wsdl.test.parse.wsdl;
+package org.wuxinshui.boosters.test.parse.wsdl;
 
 
-import org.reficio.ws.builder.core.SoapUtils;
 import org.wuxinshui.boosters.wsdl.file.FilesUtils;
-import org.wuxinshui.boosters.wsdl.parse.wsdl.SoapMessage;
+import org.wuxinshui.boosters.wsdl.SoapMessage;
 import org.junit.Test;
 
 /**
