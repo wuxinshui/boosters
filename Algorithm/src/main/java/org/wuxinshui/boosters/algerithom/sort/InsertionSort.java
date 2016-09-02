@@ -1,5 +1,9 @@
 package org.wuxinshui.boosters.algerithom.sort;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 /**
  * Created by FujiRen on 2016/9/1.
  * 插入排序
@@ -10,6 +14,10 @@ package org.wuxinshui.boosters.algerithom.sort;
 public class InsertionSort {
     public static void main(String[] args) {
         int[] intArray = new int[]{13, 6, 3, 31, 9, 27, 5, 11};
+        long begin = System.nanoTime();
+        System.out.println(Arrays.toString(simpleInsertionSort(intArray)));
+        long end = System.nanoTime();
+        System.out.println((end - begin) / 1000F);
 
     }
 
@@ -21,10 +29,25 @@ public class InsertionSort {
      * 直至整个序列有序，排序过程为n-1趟插入。
      * </p>
      *
-     * @param uglyNum
+     * @param numArray
      */
-    public static void simpleInsertionSort(int[] uglyNum) {
+    public static Integer[] simpleInsertionSort(int[] numArray) {
 
+        int length = numArray.length;
+        List<Integer> sortedList = new ArrayList<>();
+        sortedList.add(0, numArray[0]);
+        for (int i = 1; i < length; i++) {
+            for (int j = 0; j < i; j++) {
+                if (numArray[i] < sortedList.get(j)) {
+                    sortedList.add(j, numArray[i]);
+                    break;
+                } else if (numArray[i] >= sortedList.get(i - 1)) {
+                    sortedList.add(i, numArray[i]);
+                    break;
+                }
+            }
+        }
+        return sortedList.toArray(new Integer[numArray.length]);
     }
 
     /**
@@ -36,9 +59,9 @@ public class InsertionSort {
      * 一般取d1=n/2, di+1=di/2，如果结果为偶数，则加1。
      * </p>
      *
-     * @param uglyNnm
+     * @param numArray
      */
-    public static void shellSort(int[] uglyNnm) {
+    public static void shellSort(int[] numArray) {
 
     }
 }
