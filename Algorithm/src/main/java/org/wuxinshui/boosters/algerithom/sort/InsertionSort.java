@@ -51,6 +51,29 @@ public class InsertionSort {
     }
 
     /**
+     * 直接插入排序
+     *每步将一个待排序的记录，按其顺序码大小插入到前面已经排序的字序列的合适位置（从后向前找到合适位置后），直到全部插入排序完为止。
+     * @param numArray
+     * @return
+     */
+    public static int[] simpleInsertionSort01(int[] numArray) {
+        for (int i = 1; i < numArray.length; i++) {
+            int temp = numArray[i];
+            int j;
+            //找到合适的位置j
+            for (j = i - 1; j >= 0; j--) {
+                if (numArray[j] > temp) {
+                    numArray[j + 1] = numArray[j];
+                } else {
+                    break;
+                }
+            }
+            numArray[j + 1] = temp;
+        }
+        return numArray;
+    }
+
+    /**
      * 希尔排序
      * <p>
      * 先取一个正整数d1<n，把所有相隔d1的记录放一组，
