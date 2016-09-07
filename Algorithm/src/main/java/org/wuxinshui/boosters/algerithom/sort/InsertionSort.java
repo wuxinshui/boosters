@@ -24,7 +24,7 @@ public class InsertionSort {
     /**
      * 直接插入排序
      * <p>
-     * 先将序列中第1个记录看成一个有序子序列，
+     * 基本思想：先将序列中第1个记录看成一个有序子序列，
      * 然后从第2个记录开始，逐个进行插入，
      * 直至整个序列有序，排序过程为n-1趟插入。
      * </p>
@@ -52,7 +52,11 @@ public class InsertionSort {
 
     /**
      * 直接插入排序
-     *每步将一个待排序的记录，按其顺序码大小插入到前面已经排序的字序列的合适位置（从后向前找到合适位置后），直到全部插入排序完为止。
+     * 基本思想：每步将一个待排序的记录，
+     * 按其顺序码大小插入到前面已经排序的字序列
+     * 的合适位置（从后向前找到合适位置后），
+     * 直到全部插入排序完为止。
+     *
      * @param numArray
      * @return
      */
@@ -62,6 +66,37 @@ public class InsertionSort {
             int j;
             //找到合适的位置j
             for (j = i - 1; j >= 0; j--) {
+                if (numArray[j] > temp) {
+                    numArray[j + 1] = numArray[j];
+                } else {
+                    break;
+                }
+            }
+            numArray[j + 1] = temp;
+        }
+        return numArray;
+    }
+
+    /**
+     * 二分法插入排序
+     * 基本思想：二分法插入排序的思想和直接插入一样，
+     * 只是找合适的插入位置的方式不同，
+     * 这里是按二分法找到合适的位置，
+     * 可以减少比较的次数。
+     *
+     * @param numArray
+     * @return
+     */
+    public static int[] dichotomyInsertionSort(int[] numArray) {
+        for (int i = 1; i < numArray.length; i++) {
+            int temp = numArray[i];
+            int j;
+            //找到合适的位置j
+            j = (int) Math.floor((i - 1) / 2);
+            if (numArray[j] <= temp) {
+                j = i - 1;
+            }
+            for (; j >= 0; j--) {
                 if (numArray[j] > temp) {
                     numArray[j + 1] = numArray[j];
                 } else {
