@@ -15,8 +15,8 @@
   <notes />
   <edges>
     <edge source="org.wuxinshui.boosters.designPatterns.factorymethod.MailSendFactoryTest" target="org.wuxinshui.boosters.designPatterns.factorymethod.MailSendFactory">
-      <point x="0.0" y="-27.0" />
-      <point x="0.0" y="27.0" />
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
     </edge>
     <edge source="org.wuxinshui.boosters.designPatterns.factorymethod.SmsSendFactory" target="org.wuxinshui.boosters.designPatterns.factorymethod.Provider">
       <point x="-39.0" y="-27.0" />
@@ -25,10 +25,8 @@
       <point x="39.0" y="27.0" />
     </edge>
     <edge source="org.wuxinshui.boosters.designPatterns.factorymethod.SmsSendFactory" target="org.wuxinshui.boosters.designPatterns.factorymethod.SmsSender">
-      <point x="39.0" y="-27.0" />
-      <point x="354.25" y="183.0" />
-      <point x="374.5" y="183.0" />
-      <point x="0.0" y="27.0" />
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
     </edge>
     <edge source="org.wuxinshui.boosters.designPatterns.factorymethod.MailSender" target="org.wuxinshui.boosters.designPatterns.factorymethod.Sender">
       <point x="0.0" y="-27.0" />
@@ -37,14 +35,12 @@
       <point x="-29.75" y="27.0" />
     </edge>
     <edge source="org.wuxinshui.boosters.designPatterns.factorymethod.SmsSendFactoryTest" target="org.wuxinshui.boosters.designPatterns.factorymethod.SmsSendFactory">
-      <point x="0.0" y="-27.0" />
-      <point x="0.0" y="27.0" />
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
     </edge>
     <edge source="org.wuxinshui.boosters.designPatterns.factorymethod.MailSendFactory" target="org.wuxinshui.boosters.designPatterns.factorymethod.MailSender">
-      <point x="-39.0" y="-27.0" />
-      <point x="79.75" y="183.0" />
-      <point x="59.5" y="183.0" />
-      <point x="0.0" y="27.0" />
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
     </edge>
     <edge source="org.wuxinshui.boosters.designPatterns.factorymethod.SmsSender" target="org.wuxinshui.boosters.designPatterns.factorymethod.Sender">
       <point x="0.0" y="-27.0" />
@@ -59,9 +55,9 @@
       <point x="-39.0" y="27.0" />
     </edge>
   </edges>
-  <settings layout="Hierarchic Group" zoom="1.0" x="166.0" y="179.0" />
+  <settings layout="Hierarchic Group" zoom="1.0" x="217.0" y="188.0" />
   <SelectedNodes>
-    <node>org.wuxinshui.boosters.designPatterns.factorymethod.SmsSendFactoryTest</node>
+    <node>org.wuxinshui.boosters.designPatterns.factorymethod.MailSendFactory</node>
   </SelectedNodes>
   <Categories>
     <Category>Methods</Category>
