@@ -9,8 +9,9 @@
     <packaging>pom</packaging>
     <name>boosters</name>
     <modules>
-        <module>WsdlUtils</module>
-        <module>FileUtils</module>
+        <module>wsdlUtils</module>
+        <module>fileUtils</module>
+        <module>algorithm</module>
     </modules>
 
 </project>
