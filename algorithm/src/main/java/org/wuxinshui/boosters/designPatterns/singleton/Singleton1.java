@@ -26,4 +26,8 @@ public class Singleton1 {
     public static void createString(){
         System.out.println("createString in Singleton");
     }
+
+    public static void main(String[] args) {
+        Singleton1.createString();
+    }
 }
