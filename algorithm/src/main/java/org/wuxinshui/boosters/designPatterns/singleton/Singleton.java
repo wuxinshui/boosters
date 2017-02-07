@@ -13,9 +13,9 @@ public class Singleton {
 
     /**
      * 构造器私有化，只有singleton内部才可以调用
+     * 确保不会被其他代码实例化
      */
     private Singleton(){
-
     }
 
     public static Singleton getInstance(){
