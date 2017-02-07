@@ -1,4 +1,4 @@
-package org.wuxinshui.boosters.wsdl.parse.xml;
+package org.wuxinshui.boosters.xml;
 
 import de.odysseus.staxon.json.JsonXMLConfig;
 import de.odysseus.staxon.json.JsonXMLConfigBuilder;

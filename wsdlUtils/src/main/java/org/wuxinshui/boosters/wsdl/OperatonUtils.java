@@ -1,4 +1,4 @@
-package org.wuxinshui.boosters.wsdl.parse.wsdl;
+package org.wuxinshui.boosters.wsdl;
 
 import com.ibm.wsdl.BindingImpl;
 import com.ibm.wsdl.PortTypeImpl;

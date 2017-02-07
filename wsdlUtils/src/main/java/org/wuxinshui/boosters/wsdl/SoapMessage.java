@@ -1,4 +1,4 @@
-package org.wuxinshui.boosters.wsdl.parse.wsdl;
+package org.wuxinshui.boosters.wsdl;
 
 import org.reficio.ws.builder.SoapBuilder;
 import org.reficio.ws.builder.SoapOperation;

@@ -1,4 +1,4 @@
-package org.wuxinshui.boosters.wsdl.parse.xml;
+package org.wuxinshui.boosters.xml;
 
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.JSONPath;
