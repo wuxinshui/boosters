@@ -32,4 +32,17 @@ public class LazySingleton {
 		}
 		return instance;
 	}
+
+	public static void main(String[] args) {
+		new Thread(){
+			public void run(){
+				long bg = System.currentTimeMillis();
+				for (int i = 0; i < 100000; i++) {
+					Singleton1.getInstance();
+//					LazySingleton.getInstance();
+				}
+				System.out.println("spend:" + (System.currentTimeMillis() - bg));
+			}
+		}.start();
+	}
 }
