@@ -12,6 +12,6 @@ public enum SingletonEnum {
         SingletonEnum singletonEnum = SingletonEnum.INSTANCE;
         SingletonEnum singletonEnum1 = SingletonEnum.INSTANCE;
         System.out.println(singletonEnum == singletonEnum1);
-
+        System.out.println(singletonEnum.getClass());
     }
 }
