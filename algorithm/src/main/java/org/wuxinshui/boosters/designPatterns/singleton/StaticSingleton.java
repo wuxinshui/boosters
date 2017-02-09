@@ -16,11 +16,30 @@ package org.wuxinshui.boosters.designPatterns.singleton;
  * limitations under the License.
  */
 
+import java.lang.reflect.Constructor;
+import java.lang.reflect.Method;
+
 /**
  * Created by wuxinshui on 2017/2/7.
  */
-public class Singleton1Test {
+//使用内部类实现单例 ，实现延迟加载
+public class StaticSingleton {
+	private StaticSingleton(){
+		System.out.println("StaticSingleton is create");
+	}
+
+	//JVM加载 StaticSingleton时不会初始化内部类SingletonHolder
+	//当方法getInstance()被调用时，才会加载getInstance()
+	private static class SingletonHolder{
+		private static StaticSingleton instance=new StaticSingleton();
+	}
+
+	public static StaticSingleton getInstance(){
+		return SingletonHolder.instance;
+	}
+
 	public static void main(String[] args) {
-		Singleton1.createString();
+		StaticSingleton instance=StaticSingleton.getInstance();
+		System.out.println(instance);
 	}
 }
