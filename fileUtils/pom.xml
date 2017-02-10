@@ -131,7 +131,7 @@
         </repository>
         <snapshotRepository>
             <id>snapshots</id>
-            <url>http://qf-javadev-01:8081/nexus/content/repositories/snapshots/</url>
+            <url>http://localhost:8081/repository/maven-snapshots/</url>
         </snapshotRepository>
     </distributionManagement>
 
