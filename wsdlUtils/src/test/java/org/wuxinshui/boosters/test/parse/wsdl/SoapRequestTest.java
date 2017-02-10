@@ -1,9 +1,9 @@
 package org.wuxinshui.boosters.test.parse.wsdl;
 
 
-import org.wuxinshui.boosters.wsdl.file.FilesUtils;
-import org.wuxinshui.boosters.wsdl.SoapMessage;
 import org.junit.Test;
+import org.wuxinshui.boosters.file.FilesUtils;
+import org.wuxinshui.boosters.wsdl.SoapMessage;
 
 /**
  * Created by FujiRen on 2016/4/13.
