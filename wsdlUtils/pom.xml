@@ -129,6 +129,12 @@
             <artifactId>fastjson</artifactId>
             <version>1.2.10</version>
         </dependency>
+
+        <dependency>
+            <groupId>org.wuxinshui.boosters</groupId>
+            <artifactId>fileUtils</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
     </dependencies>
 
     <distributionManagement>
@@ -138,8 +144,9 @@
         </repository>
         <snapshotRepository>
             <id>snapshots</id>
-            <url>http://qf-javadev-01:8081/nexus/content/repositories/snapshots/</url>
+            <url>http://localhost:8081/repository/maven-snapshots/</url>
         </snapshotRepository>
+
     </distributionManagement>
 
     <build>
