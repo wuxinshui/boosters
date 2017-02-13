@@ -19,33 +19,33 @@ package org.wuxinshui.boosters.designPatterns.singleton;
 /**
  * Created by wuxinshui on 2017/2/7.
  */
-//实现延迟加载
-public class LazySingleton {
-	private LazySingleton() {
-		System.out.println("LazySingleton is create");
+//线程安全的懒汉模式-实现延迟加载
+public class SyncLazySingleton {
+	private SyncLazySingleton() {
+		System.out.println("SyncLazySingleton is create");
 	}
 
 	//instance初始值赋予null，确保系统启动时没有额外的负载
-	private static LazySingleton instance = null;
+	private static SyncLazySingleton instance = null;
 
-	//使用同步关键字，防止多个实例被创建（多线程环境）
-	public static synchronized LazySingleton getInstance() {
+	//使用同步关键字，防止多个实例被创建（多线程环境），synchronized保证线程安全
+	public static synchronized SyncLazySingleton getInstance() {
 		if (instance == null) {
-			instance = new LazySingleton();
+			instance = new SyncLazySingleton();
 		}
 		return instance;
 	}
 
-	//synchronized降低了系统性能
+	//synchronized保证线程安全，降低了系统性能
 	public static void main(String[] args) {
 		new Thread(){
 			public void run(){
 				long bg = System.currentTimeMillis();
-				for (int i = 0; i < 100000; i++) {
-					Singleton1.getInstance();
-//					LazySingleton.getInstance();
+				for (int i = 0; i < 1000000; i++) {
+//					HungrySingleton.getInstance();
+					 SyncLazySingleton.getInstance();
 				}
-				System.out.println("spend:" + (System.currentTimeMillis() - bg));
+				System.out.println("spend:" + (System.currentTimeMillis() - bg)+"ms");
 			}
 		}.start();
 	}
