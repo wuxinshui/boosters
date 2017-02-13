@@ -16,13 +16,10 @@ package org.wuxinshui.boosters.designPatterns.singleton;
  * limitations under the License.
  */
 
-import java.lang.reflect.Constructor;
-import java.lang.reflect.Method;
-
 /**
  * Created by wuxinshui on 2017/2/7.
  */
-//使用内部类实现单例 ，实现延迟加载
+//安全的懒汉模式-使用内部类实现单例 ，实现延迟加载
 public class StaticSingleton {
 	private StaticSingleton(){
 		System.out.println("StaticSingleton is create");
