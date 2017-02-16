@@ -16,13 +16,18 @@ package org.wuxinshui.boosters.designPatterns.singleton;
  * limitations under the License.
  */
 
+import java.util.concurrent.atomic.AtomicInteger;
+
 /**
  * Created by wuxinshui on 2017/2/7.
  */
 //安全的懒汉模式-使用内部类实现单例 ，实现延迟加载
 public class StaticSingleton {
+	//添加计数器
+	public static final AtomicInteger counter=new AtomicInteger();
 	private StaticSingleton(){
-		System.out.println("StaticSingleton is create");
+		counter.incrementAndGet();
+		System.out.println("The "+(counter.get())+" StaticSingleton instance is created");
 	}
 
 	//JVM加载 StaticSingleton时不会初始化内部类SingletonHolder
