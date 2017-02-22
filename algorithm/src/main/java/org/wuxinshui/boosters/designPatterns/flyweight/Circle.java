@@ -2,12 +2,13 @@ package org.wuxinshui.boosters.designPatterns.flyweight;
 
 /**
  * Created with IntelliJ IDEA.
- * User: FujiRen
+ * User: wuxinshui
  * Date: 2016/11/17
  * Time: 10:14
  * To change this template use File | Settings | File Templates.
  */
-public class Circle extends Shape {
+//圆
+public class Circle implements Shape {
     private String color;
 
     public Circle(String color) {

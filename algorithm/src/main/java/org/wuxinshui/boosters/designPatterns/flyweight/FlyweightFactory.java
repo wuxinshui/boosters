@@ -4,34 +4,37 @@ import java.util.HashMap;
 
 /**
  * Created with IntelliJ IDEA.
- * User: FujiRen
+ * User: wuxinshui
  * Date: 2016/11/16
  * Time: 18:21
  * To change this template use File | Settings | File Templates.
  */
 public class FlyweightFactory {
-    private HashMap<String,Shape> flyweights=new HashMap<>();
+    private HashMap<String,Shape> circles=new HashMap<>();
+    private HashMap<String ,Shape> rectangles=new HashMap<>();
 
-    public Shape getShape(String key){
-        Shape shape=flyweights.get(key);
-        if (null==shape){
-            shape=new Circle(key);
-            flyweights.put(key,shape);
+    public Shape getCircle(String key){
+        Shape circle=circles.get(key);
+        if (null==circle){
+            circle=new Circle(key);
+            circles.put(key,circle);
         }
-        return shape;
+        return circle;
     }
 
-    public int getSums(){
-        return flyweights.size();
+    public Shape getRectangle(String key,int x,int y){
+        Shape rectangle=rectangles.get(key);
+        if (null==rectangle){
+            rectangle=new Rectangle(x,y);
+            rectangles.put(key,rectangle);
+        }
+        return rectangle;
     }
 
-
-
-    public HashMap<String, Shape> getFlyweights() {
-        return flyweights;
+    public int getCircleSum(){
+        return circles.size();
     }
-
-    public void setFlyweights(HashMap<String, Shape> flyweights) {
-        this.flyweights = flyweights;
+    public int getRectangleSum(){
+        return rectangles.size();
     }
 }
