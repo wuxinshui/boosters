@@ -23,9 +23,10 @@ package org.wuxinshui.boosters.concurrent.future.simpleImpl;
 public class RealData implements Data {
 	protected final String result;
 
-	public RealData(String para){
-		StringBuffer buffer=new StringBuffer();
-		for (int i=0;i<10;i++){
+	public RealData(String para) {
+		StringBuffer buffer = new StringBuffer();
+		System.out.println("RealData 正在构造真实数据。。。");
+		for (int i = 0; i < 10; i++) {
 			buffer.append(para);
 			try {
 				Thread.sleep(1000);
@@ -33,7 +34,8 @@ public class RealData implements Data {
 				e.printStackTrace();
 			}
 		}
-		result=buffer.toString();
+		System.out.println("RealData 真实数据构造完成。。。");
+		result = buffer.toString();
 	}
 
 

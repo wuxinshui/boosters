@@ -26,12 +26,13 @@ public class Main {
 		Client client = new Client();
 		//这里会立即返回，因为得到的是FutureData,而不是RealData
 		Data data = client.request("name");
-		System.out.println("请求完毕。。。");
+		System.out.println("发送请求完毕。。。");
 		try {
 			//模拟其他业务逻辑处理
 			//处理过程中，RealData被创建，充分利用了等待的时间。
+			System.out.println("Main 正在调用其他业务逻辑。。。");
 			Thread.sleep(1000);
-			System.out.println("正在做其他事情。。。");
+			System.out.println("Main 其他业务处理完成。。。");
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
