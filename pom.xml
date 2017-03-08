@@ -3,15 +3,308 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
+
     <groupId>org.wuxinshui.boosters</groupId>
     <artifactId>boosters</artifactId>
-    <version>0.0.1</version>
+    <version>1.0.0-SNAPSHOT</version>
     <packaging>pom</packaging>
+
     <name>boosters</name>
+
     <modules>
+        <!--WebService常用工具类-->
         <module>wsdlUtils</module>
+        <!--文件、IO工具类-->
         <module>fileUtils</module>
+        <!--算法、设计模式、并行模式-->
         <module>algorithm</module>
+        <!--积累编程技巧-->
+        <module>code-skills</module>
+        <!--经典面试题-->
+        <module>interview</module>
     </modules>
+
+    <!--主要依赖版本定义-->
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <snapshot.version>1.0.0-SNAPSHOT</snapshot.version>
+        <jdk.version>1.8</jdk.version>
+        <maven-release-plugin.version>2.4.1</maven-release-plugin.version>
+        <maven-deploy-plugin.version>2.7</maven-deploy-plugin.version>
+        <maven-source-plugin.version>2.2.1</maven-source-plugin.version>
+        <spring_version>4.3.0.RELEASE</spring_version>
+        <staxon.version>1.3</staxon.version>
+        <json-smart.version>2.2.1</json-smart.version>
+        <json-path.version>2.2.0</json-path.version>
+        <commons-lang.version>2.6</commons-lang.version>
+        <commons-lang3.version>3.0</commons-lang3.version>
+        <gson.version>2.6.2</gson.version>
+        <junit.version>4.12</junit.version>
+        <fastjson.version>1.2.10</fastjson.version>
+        <jackson-databind.version>2.7.3</jackson-databind.version>
+        <groovy-xml.version>2.0.1</groovy-xml.version>
+        <dom4j.version>1.6.1</dom4j.version>
+        <wsdl4j.version>1.6.2</wsdl4j.version>
+        <jaxen.version>1.1.6</jaxen.version>
+        <h2.version>1.4.191</h2.version>
+        <guava.version>19.0</guava.version>
+        <jackson-core.version>2.7.3</jackson-core.version>
+        <wsrf-xbeans.version>1.0</wsrf-xbeans.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <!--Converting JSON to XML-->
+            <dependency>
+                <groupId>de.odysseus.staxon</groupId>
+                <artifactId>staxon</artifactId>
+                <version>${staxon.version}</version>
+            </dependency>
+            <!--JSON path依赖包 example-->
+            <dependency>
+                <groupId>net.minidev</groupId>
+                <artifactId>json-smart</artifactId>
+                <version>${json-smart.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.jayway.jsonpath</groupId>
+                <artifactId>json-path</artifactId>
+                <version>${json-path.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>commons-lang</groupId>
+                <artifactId>commons-lang</artifactId>
+                <version>${commons-lang.version}</version>
+            </dependency>
+            <!--JSON path依赖包 end-->
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>${commons-lang3.version}</version>
+            </dependency>
+            <!--格式化json-->
+            <dependency>
+                <groupId>com.google.code.gson</groupId>
+                <artifactId>gson</artifactId>
+                <version>${gson.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>${junit.version}</version>
+                <scope>test</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>${guava.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.h2database</groupId>
+                <artifactId>h2</artifactId>
+                <version>${h2.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.reficio</groupId>
+                <artifactId>soap-builder</artifactId>
+                <version>${snapshot.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.reficio</groupId>
+                <artifactId>soap-client</artifactId>
+                <version>${snapshot.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.reficio</groupId>
+                <artifactId>soap-server</artifactId>
+                <version>${snapshot.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>wsdl4j</groupId>
+                <artifactId>wsdl4j</artifactId>
+                <version>${wsdl4j.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.codehaus.groovy</groupId>
+                <artifactId>groovy-xml</artifactId>
+                <version>${groovy-xml.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>dom4j</groupId>
+                <artifactId>dom4j</artifactId>
+                <version>${dom4j.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>jaxen</groupId>
+                <artifactId>jaxen</artifactId>
+                <version>${jaxen.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-core</artifactId>
+                <version>${jackson-core.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-databind</artifactId>
+                <version>${jackson-databind.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${fastjson.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.wuxinshui.boosters</groupId>
+                <artifactId>fileUtils</artifactId>
+                <version>${snapshot.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>wsrf</groupId>
+                <artifactId>wsrf-xbeans</artifactId>
+                <version>${wsrf-xbeans.version}</version>
+            </dependency>
+
+            <!-- spring start -->
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-core</artifactId>
+                <version>${spring_version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-beans</artifactId>
+                <version>${spring_version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-web</artifactId>
+                <version>${spring_version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-webmvc</artifactId>
+                <version>${spring_version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-context</artifactId>
+                <version>${spring_version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-orm</artifactId>
+                <version>${spring_version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-tx</artifactId>
+                <version>${spring_version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-jdbc</artifactId>
+                <version>${spring_version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-context-support</artifactId>
+                <version>${spring_version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-test</artifactId>
+                <version>${spring_version}</version>
+            </dependency>
+            <!-- spring end -->
+        </dependencies>
+    </dependencyManagement>
+
+    <distributionManagement>
+        <repository>
+            <id>releases</id>
+            <url>http://qf-javadev-01:8081/nexus/content/repositories/releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>snapshots</id>
+            <url>http://localhost:8081/repository/maven-snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <!--指定编译的jdk版本，默认的是1.5-->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <configuration>
+                        <source>${jdk.version}</source>
+                        <target>${jdk.version}</target>
+                    </configuration>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-release-plugin</artifactId>
+                    <version>${maven-release-plugin.version}</version>
+                </plugin>
+                <!--打包jar包-->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-deploy-plugin</artifactId>
+                    <version>${maven-deploy-plugin.version}</version>
+                    <configuration>
+                        <updateReleaseInfo>true</updateReleaseInfo>
+                    </configuration>
+                </plugin>
+                <!--打包源码-->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-source-plugin</artifactId>
+                    <version>${maven-source-plugin.version}</version>
+                    <executions>
+                        <execution>
+                            <phase>package</phase>
+                            <goals>
+                                <goal>jar</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+
+                <!--打包成jar,可直接java -jar 执行-->
+                <!-- <plugin>
+                     <groupId>org.apache.maven.plugins</groupId>
+                     <artifactId>maven-assembly-plugin</artifactId>
+                     <version>2.5.5</version>
+                     <configuration>
+                         <archive>
+                             <manifest>
+                                 <mainClass>Bootstrap</mainClass>
+                             </manifest>
+                         </archive>
+                         <descriptorRefs>
+                             <descriptorRef>jar-with-dependencies</descriptorRef>
+                         </descriptorRefs>
+                     </configuration>
+                     <executions>
+                         <execution>
+                             <id>make-assembly</id>
+                             <phase>package</phase>
+                             <goals>
+                                 <goal>single</goal>
+                             </goals>
+                         </execution>
+                     </executions>
+                 </plugin>-->
+            </plugins>
+        </pluginManagement>
+    </build>
 
 </project>
