@@ -1,4 +1,4 @@
-package org.wuxinshui.boosters.test.parse.wsdl;
+package org.wuxinshui.boosters.test.wsdl;
 
 
 import org.junit.Test;
