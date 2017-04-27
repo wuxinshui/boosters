@@ -13,7 +13,7 @@
 
     <modules>
         <!--WebService常用工具类-->
-        <module>wsdlUtils</module>
+        <!--<module>wsdlUtils</module>-->
         <!--文件、IO工具类-->
         <module>fileUtils</module>
         <!--算法、设计模式、并行模式-->

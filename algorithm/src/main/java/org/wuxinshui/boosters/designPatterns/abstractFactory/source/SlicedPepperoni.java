@@ -1,7 +1,5 @@
 package org.wuxinshui.boosters.designPatterns.abstractFactory.source;
 
-import org.wuxinshui.boosters.designPatterns.abstractFactory.source.Pepperoni;
-
 /**
  * Created with IntelliJ IDEA.
  * User: FujiRen

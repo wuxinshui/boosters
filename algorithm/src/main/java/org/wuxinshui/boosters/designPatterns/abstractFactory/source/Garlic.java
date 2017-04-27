@@ -1,7 +1,5 @@
 package org.wuxinshui.boosters.designPatterns.abstractFactory.source;
 
-import org.wuxinshui.boosters.designPatterns.abstractFactory.source.Veggies;
-
 /**
  * Created with IntelliJ IDEA.
  * User: FujiRen
