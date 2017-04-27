@@ -41,6 +41,7 @@ public class HttpUtils {
 				// adding post params
 				if (jsonData != null && jsonData.length() > 0) {
 					StringEntity encodedEntity = new StringEntity(jsonData, "UTF-8");
+					encodedEntity.setContentEncoding("UTF-8");
 					encodedEntity.setContentType("application/json");
 					httpPost.setEntity(encodedEntity);
 				}
