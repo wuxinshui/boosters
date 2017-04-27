@@ -66,6 +66,7 @@ public class HttpUtils {
 	}
 
 	public static void sendPost(String url, String jsonData) {
+		InputStream is = null;
 		try {
 			//创建连接
 			URL connUrl = new URL(url);
@@ -90,7 +91,15 @@ public class HttpUtils {
 			out.close();
 
 			//读取响应
-			BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+			HttpURLConnection urlConnection = connection;
+			if (urlConnection.getResponseCode() > 400) {
+				is = urlConnection.getErrorStream();
+			} else {
+				is = urlConnection.getInputStream();
+			}
+
+			InputStreamReader isr = new InputStreamReader(is);
+			BufferedReader reader = new BufferedReader(isr);
 			String lines;
 			StringBuffer sb = new StringBuffer("");
 			while ((lines = reader.readLine()) != null) {
@@ -102,14 +111,17 @@ public class HttpUtils {
 			// 断开连接
 			connection.disconnect();
 		} catch (MalformedURLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (UnsupportedEncodingException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		} catch (Exception e) {
+			if (null != is) {
+				try {
+					is.close();
+				} catch (IOException e1) {
+					e1.printStackTrace();
+				}
+			}
 		}
 
 	}
