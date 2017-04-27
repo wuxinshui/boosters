@@ -14,6 +14,4 @@
 ## interview
 面试题
 
-## wsdlUtils
-WebService工具类
 
