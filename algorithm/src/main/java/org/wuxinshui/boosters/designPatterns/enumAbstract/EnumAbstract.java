@@ -8,9 +8,13 @@ package org.wuxinshui.boosters.designPatterns.enumAbstract;
  */
 public class EnumAbstract {
 
-
+    //对外提供方法
     public void print(int key) {
         keyOf(key).print();
+    }
+
+    public void print(WorkDays workDays){
+        workDays.print();
     }
 
     //获取Key对应的实例
@@ -40,37 +44,38 @@ public class EnumAbstract {
         MONDAY(1) {
             @Override
             protected void print() {
-                System.out.println(getKey());
+                System.out.println(getKey()+" : 消息1");
             }
         }, TUESDAY(2) {
             @Override
             protected void print() {
-                System.out.println(getKey());
+                System.out.println(getKey()+" : 消息2");
             }
         }, WEDNESDAY(3) {
             @Override
             protected void print() {
-                System.out.println(getKey());
+                System.out.println(getKey()+": 消息3");
             }
         }, THURSDAY(4) {
             @Override
             protected void print() {
-                System.out.println(getKey());
+                System.out.println(getKey()+" : 消息4");
             }
         }, FRIDAY(5) {
             @Override
             protected void print() {
-                System.out.println(getKey());
+                System.out.println(getKey()+" : 消息5");
+
             }
         }, SATURDAY(6) {
             @Override
             protected void print() {
-                System.out.println(getKey());
+                System.out.println(getKey()+" : 消息6");
             }
         }, SUNDAY(7) {
             @Override
             protected void print() {
-                System.out.println(getKey());
+                System.out.println(getKey()+" : 消息7");
             }
         };
 
