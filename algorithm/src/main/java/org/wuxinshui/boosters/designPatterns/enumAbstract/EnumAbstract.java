@@ -40,7 +40,7 @@ public class EnumAbstract {
     }
 
     //最小访问权限设计原则，根据需要设置访问权限
-    private enum WorkDays {
+    public enum WorkDays {
         MONDAY(1) {
             @Override
             protected void print() {
