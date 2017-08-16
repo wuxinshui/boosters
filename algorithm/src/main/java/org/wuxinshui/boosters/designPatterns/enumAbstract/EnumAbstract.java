@@ -13,7 +13,7 @@ public class EnumAbstract {
         keyOf(key).print();
     }
 
-    public void print(WorkDays workDays){
+    public void print(WorkDays workDays) {
         workDays.print();
     }
 
@@ -44,38 +44,38 @@ public class EnumAbstract {
         MONDAY(1) {
             @Override
             protected void print() {
-                System.out.println(getKey()+" : 消息1");
+                System.out.println(getKey() + " : 消息1");
             }
         }, TUESDAY(2) {
             @Override
             protected void print() {
-                System.out.println(getKey()+" : 消息2");
+                System.out.println(getKey() + " : 消息2");
             }
         }, WEDNESDAY(3) {
             @Override
             protected void print() {
-                System.out.println(getKey()+": 消息3");
+                System.out.println(getKey() + ": 消息3");
             }
         }, THURSDAY(4) {
             @Override
             protected void print() {
-                System.out.println(getKey()+" : 消息4");
+                System.out.println(getKey() + " : 消息4");
             }
         }, FRIDAY(5) {
             @Override
             protected void print() {
-                System.out.println(getKey()+" : 消息5");
+                System.out.println(getKey() + " : 消息5");
 
             }
         }, SATURDAY(6) {
             @Override
             protected void print() {
-                System.out.println(getKey()+" : 消息6");
+                System.out.println(getKey() + " : 消息6");
             }
         }, SUNDAY(7) {
             @Override
             protected void print() {
-                System.out.println(getKey()+" : 消息7");
+                System.out.println(getKey() + " : 消息7");
             }
         };
 
@@ -96,5 +96,22 @@ public class EnumAbstract {
 
         //抽象方法
         protected abstract void print();
+    }
+
+    public enum WorkDaysName {
+        MONDAY("星期一"), TUESDAY("星期二"), WEDNESDAY("星期三"), THURSDAY("星期四"), FRIDAY("星期五"), SATURDAY("星期六"), SUNDAY("星期日");
+        private String name;
+
+        WorkDaysName(String name) {
+            this.name = name;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
     }
 }
