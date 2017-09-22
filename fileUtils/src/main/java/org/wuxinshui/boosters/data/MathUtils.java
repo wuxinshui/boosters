@@ -145,13 +145,25 @@ public class MathUtils {
 
     /**
      * 方差s^2=[(x1-x)^2 +...(xn-x)^2]/n
+     * 默认精度：10
+     * 默认精度策略：RoundingMode.HALF_UP
+     *
+     * @param x
+     * @return
+     */
+    public static BigDecimal variance(BigDecimal[] x, int scale) {
+        return variance(x, scale, RoundingMode.HALF_UP);
+    }
+
+    /**
+     * 方差s^2=[(x1-x)^2 +...(xn-x)^2]/n
      * 结果精度：scale
      *
      * @param x
      * @param scale
      * @return
      */
-    public static BigDecimal variance(BigDecimal[] x, int scale) {
+    public static BigDecimal variance(BigDecimal[] x, int scale, RoundingMode setRoundingMode) {
         BigDecimal m = new BigDecimal(x.length);
         BigDecimal sum = BigDecimal.ZERO;
         //求和
@@ -159,13 +171,13 @@ public class MathUtils {
             sum = sum.add(b);
         }
         //求平均值
-        BigDecimal dAve = sum.divide(m, 10, BigDecimal.ROUND_HALF_UP);
+        BigDecimal dAve = sum.divide(m, 10, setRoundingMode);
         BigDecimal dVar = BigDecimal.ZERO;
         //求方差
         for (BigDecimal b : x) {
             dVar = dVar.add(b.subtract(dAve).pow(2));
         }
-        return dVar.divide(m, 10, BigDecimal.ROUND_HALF_UP).setScale(scale, BigDecimal.ROUND_HALF_UP);
+        return dVar.divide(m, 10, setRoundingMode).setScale(scale, setRoundingMode);
     }
 
     /**
@@ -183,23 +195,41 @@ public class MathUtils {
     /**
      * 标准差σ=sqrt(s^2)
      * 结果精度：scale
-     *牛顿迭代法求大数开方
+     * 默认精度策略：RoundingMode.HALF_UP
+     * 牛顿迭代法求大数开方
+     *
      * @param x
      * @param scale
      * @return
      */
     public static BigDecimal standardDeviation(BigDecimal[] x, int scale) {
+        //默认RoundingMode.HALF_UP
+        return standardDeviation(x, scale, RoundingMode.HALF_UP);
+    }
+
+    /**
+     * 标准差σ=sqrt(s^2)
+     * 结果精度：scale
+     * 牛顿迭代法求大数开方
+     *
+     * @param x
+     * @param scale
+     * @return
+     */
+    public static BigDecimal standardDeviation(BigDecimal[] x, int scale, RoundingMode setRoundingMode) {
+        //方差
         BigDecimal variance = variance(x, scale);
         BigDecimal base2 = BigDecimal.valueOf(2.0);
+        //计算精度
         int precision = 100;
-        MathContext mc = new MathContext(precision, RoundingMode.HALF_UP);
+        MathContext mc = new MathContext(precision, setRoundingMode);
         BigDecimal deviation = variance;
         int cnt = 0;
         while (cnt < 100) {
             deviation = (deviation.add(variance.divide(deviation, mc))).divide(base2, mc);
             cnt++;
         }
-        deviation = deviation.setScale(scale, BigDecimal.ROUND_HALF_UP);
+        deviation = deviation.setScale(scale, setRoundingMode);
         return deviation;
     }
 }
