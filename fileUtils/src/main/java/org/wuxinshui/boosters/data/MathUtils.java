@@ -165,6 +165,9 @@ public class MathUtils {
      */
     public static BigDecimal variance(BigDecimal[] x, int scale, RoundingMode setRoundingMode) {
         BigDecimal m = new BigDecimal(x.length);
+        if (m.compareTo(BigDecimal.ZERO)==0){
+            return BigDecimal.ZERO;
+        }
         BigDecimal sum = BigDecimal.ZERO;
         //求和
         for (BigDecimal b : x) {
@@ -219,6 +222,9 @@ public class MathUtils {
     public static BigDecimal standardDeviation(BigDecimal[] x, int scale, RoundingMode setRoundingMode) {
         //方差
         BigDecimal variance = variance(x, scale);
+        if (variance.compareTo(BigDecimal.ZERO)==0){
+            return BigDecimal.ZERO;
+        }
         BigDecimal base2 = BigDecimal.valueOf(2.0);
         //计算精度
         int precision = 100;
