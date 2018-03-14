@@ -7,6 +7,10 @@ import org.joda.time.LocalDate;
 import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
 
+import java.time.LocalDateTime;
+import java.time.YearMonth;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -239,6 +243,56 @@ public class DateUtils {
     public static String getDayOfWeek(Date date){
         Integer day = dayOfWeek(date);
         return DAY_OF_WEEK[day-1];
+    }
+
+    /**
+     * 获取一个月的开始时间 2017-10-31 23:59:59
+     * @return
+     */
+    public static Date getStartTimeOfMonth(){
+        YearMonth yearMonth=YearMonth.now();
+        int month=yearMonth.getMonthValue();
+        int year=yearMonth.getYear();
+        return getBeginTimeOfYearMonth(year,month);
+    }
+
+    /**
+     * 获取一个月的开始时间 2017-10-01 00:00:00
+     * @return
+     */
+    public static Date getEndTimeOfMonth(){
+        YearMonth yearMonth=YearMonth.now();
+        int month=yearMonth.getMonthValue();
+        int year=yearMonth.getYear();
+        return getEndTimeOfYearMonth(year,month);
+    }
+
+    /**
+     * 获取年月的开始时间
+     * @param year
+     * @param month
+     * @return
+     */
+    public static Date getBeginTimeOfYearMonth(int year, int month) {
+        YearMonth yearMonth = YearMonth.of(year, month);
+        java.time.LocalDate localDate = yearMonth.atDay(1);
+        LocalDateTime startOfDay = localDate.atStartOfDay();
+        ZonedDateTime zonedDateTime = startOfDay.atZone(ZoneId.of("Asia/Shanghai"));
+        return Date.from(zonedDateTime.toInstant());
+    }
+
+    /**
+     * 获取年月的结束时间
+     * @param year
+     * @param month
+     * @return
+     */
+    public static Date getEndTimeOfYearMonth(int year, int month) {
+        YearMonth yearMonth = YearMonth.of(year, month);
+        java.time.LocalDate endOfMonth = yearMonth.atEndOfMonth();
+        LocalDateTime localDateTime = endOfMonth.atTime(23, 59, 59, 999);
+        ZonedDateTime zonedDateTime = localDateTime.atZone(ZoneId.of("Asia/Shanghai"));
+        return Date.from(zonedDateTime.toInstant());
     }
 
     public static void main(String[] args) {
