@@ -1,15 +1,22 @@
 package org.wuxinshui.boosters.designPatterns.producerconsumer;
 
+import java.util.Random;
 import java.util.concurrent.BlockingQueue;
-import java.util.concurrent.LinkedBlockingDeque;
 
+/**
+ * 生产者
+ */
 public class Producer implements Runnable {
     private BlockingQueue<PcData> queue;
 
     @Override
     public void run() {
-        PcData pc=new PcData(1);
-        queue.add(pc);
+        Random random = new Random();
+
+        PcData pc = new PcData(random.nextInt());
+        if (queue.add(pc)) {
+            System.out.println("producer add .success..." + pc);
+        }
     }
 
     public Producer(BlockingQueue<PcData> queue) {
