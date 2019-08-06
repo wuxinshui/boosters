@@ -23,25 +23,28 @@ import java.util.concurrent.atomic.AtomicInteger;
  */
 //安全的懒汉模式-使用内部类实现单例 ，实现延迟加载
 public class StaticSingleton {
-	//添加计数器
-	public static final AtomicInteger counter=new AtomicInteger();
-	private StaticSingleton(){
-		counter.incrementAndGet();
-		System.out.println("The "+(counter.get())+" StaticSingleton instance is created");
-	}
+    //添加计数器
+    public static final AtomicInteger counter = new AtomicInteger();
+    private static StaticSingleton test = new StaticSingleton();
 
-	//JVM加载 StaticSingleton时不会初始化内部类SingletonHolder
-	//当方法getInstance()被调用时，才会加载getInstance()
-	private static class SingletonHolder{
-		private static StaticSingleton instance=new StaticSingleton();
-	}
+    private StaticSingleton() {
+        counter.incrementAndGet();
+        System.out.println("The " + (counter.get()) + " StaticSingleton instance is created");
+    }
 
-	public static StaticSingleton getInstance(){
-		return SingletonHolder.instance;
-	}
+    //JVM加载 StaticSingleton时不会初始化内部类SingletonHolder
+    //当方法getInstance()被调用时，才会加载getInstance()
+    private static class SingletonHolder {
+        private static StaticSingleton instance = new StaticSingleton();
+    }
 
-	public static void main(String[] args) {
-		StaticSingleton instance=StaticSingleton.getInstance();
-		System.out.println(instance);
-	}
+    public static StaticSingleton getInstance() {
+        System.out.println("获取静态实例。。。");
+        return SingletonHolder.instance;
+    }
+
+    public static void main(String[] args) {
+        StaticSingleton instance = StaticSingleton.getInstance();
+        System.out.println(instance);
+    }
 }
