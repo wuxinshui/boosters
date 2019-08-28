@@ -25,7 +25,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class StaticSingleton {
     //添加计数器
     public static final AtomicInteger counter = new AtomicInteger();
-    public static StaticSingleton test = new StaticSingleton();
+  //  public static StaticSingleton test = new StaticSingleton();
 
     private StaticSingleton() {
         counter.incrementAndGet();
