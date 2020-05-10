@@ -15,7 +15,7 @@
         <!--WebService常用工具类-->
         <!--<module>wsdlUtils</module>-->
         <!--文件、IO工具类-->
-        <module>fileUtils</module>
+        <module>booster-utils</module>
         <!--算法、设计模式、并行模式-->
         <module>algorithm</module>
         <!--积累编程技巧-->
