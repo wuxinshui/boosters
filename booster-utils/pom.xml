@@ -11,7 +11,7 @@
     </parent>
 
     <groupId>org.wuxinshui.boosters</groupId>
-    <artifactId>fileUtils</artifactId>
+    <artifactId>booster-utils</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
@@ -45,11 +45,11 @@
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/org.codehaus.jackson/jackson-mapper-asl -->
-        <dependency>
-            <groupId>org.codehaus.jackson</groupId>
-            <artifactId>jackson-mapper-asl</artifactId>
-            <version>1.9.13</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.codehaus.jackson</groupId>-->
+<!--            <artifactId>jackson-mapper-asl</artifactId>-->
+<!--            <version>1.9.13</version>-->
+<!--        </dependency>-->
 
         <!--Converting JSON to XML-->
         <dependency>
