@@ -1,4 +1,4 @@
-package org.wuxinshui.boosters.md5;
+package org.wuxinshui.boosters.uuid;
 
 import java.io.UnsupportedEncodingException;
 import java.math.BigInteger;
@@ -6,7 +6,7 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.UUID;
 
-public class Md5Util {
+public class UUIDUtil {
 
     public static Long generateUidFromString(String msg) throws NoSuchAlgorithmException, UnsupportedEncodingException {
 
