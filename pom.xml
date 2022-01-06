@@ -46,7 +46,7 @@
         <dom4j.version>1.6.1</dom4j.version>
         <wsdl4j.version>1.6.2</wsdl4j.version>
         <jaxen.version>1.1.6</jaxen.version>
-        <h2.version>1.4.191</h2.version>
+        <h2.version>2.0.206</h2.version>
         <guava.version>19.0</guava.version>
         <jackson-core.version>2.7.3</jackson-core.version>
         <wsrf-xbeans.version>1.0</wsrf-xbeans.version>
