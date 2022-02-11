@@ -34,7 +34,7 @@
         <maven-source-plugin.version>2.2.1</maven-source-plugin.version>
         <spring_version>5.2.6.RELEASE</spring_version>
         <staxon.version>1.3</staxon.version>
-        <json-smart.version>2.2.1</json-smart.version>
+        <json-smart.version>2.4.5</json-smart.version>
         <json-path.version>2.2.0</json-path.version>
         <commons-lang.version>2.6</commons-lang.version>
         <commons-lang3.version>3.0</commons-lang3.version>
